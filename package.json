@@ -39,5 +39,6 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  }
+  },
+  "proxy":"http://ec2-54-174-178-221.compute-1.amazonaws.com"
 }
