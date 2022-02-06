@@ -21,7 +21,7 @@ export default function Join() {
       <input className='join-input' placeholder='Name' name='name' onChange={onChange} />
       <input className='join-input' placeholder='Room' name="room" onChange={onChange} />
       <Link to={`/chat?name=${name}&room=${room}`} onClick={e => (!name || !room) && e.preventDefault()} >
-        <button>Sign In</button>
+        <button className='join-sign-in-button' >Sign In</button>
       </Link>
     </div>
   </div>;

@@ -13,6 +13,7 @@
     "react-dom": "^17.0.2",
     "react-router-dom": "^6.2.1",
     "react-scripts": "5.0.0",
+    "react-scroll-to-bottom": "^4.2.0",
     "socket.io-client": "^4.4.1",
     "web-vitals": "^2.1.0"
   },
@@ -40,5 +41,5 @@
       "last 1 safari version"
     ]
   },
-  "proxy":"http://ec2-54-174-178-221.compute-1.amazonaws.com"
+  "proxy": "http://ec2-54-174-178-221.compute-1.amazonaws.com"
 }
