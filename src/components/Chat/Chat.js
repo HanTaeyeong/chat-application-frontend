@@ -51,7 +51,6 @@ export default function Chat() {
     }
   }
 
-
   return <div className='chat-outer-container'>
     <div className='chat-inner-container'>
       <InfoBar room={value.room} />
