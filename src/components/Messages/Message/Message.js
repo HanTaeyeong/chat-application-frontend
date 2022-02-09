@@ -2,8 +2,8 @@ import React, { useState } from 'react';
 import './Message.scss'
 
 
-function Message({ message: { user, text }, name }) {
-    const trimmedName = name.trim().toLowerCase();
+function Message({ user, text }) {
+    const trimmedName = user;
     const isSentByCurrentUser = (user === trimmedName);
 
     return (

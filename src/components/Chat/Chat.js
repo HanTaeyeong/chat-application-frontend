@@ -6,55 +6,59 @@ import './Chat.scss'
 
 import InfoBar from '../InfoBar/InfoBar'
 import Input from '../Input/Input'
+import Messages from '../Messages/Messages'
 
 let socket;
 
-const ENDPOINT = 'http://44.202.97.232:5000'
-const extraHeaders = {
-  // Authorization: "Bearer authorization_token_here"
-}
+const ENDPOINT = 'http://localhost:5000' || process.env.REACT_APP_ENPOINT;
 
 export default function Chat() {
   const [value, setValue] = useState({ name: '', room: '' })
   const [message, setMessage] = useState('')
   const [messages, setMessages] = useState([])
+  const [users,setUsers]=useState([])
+
   useEffect(() => {
     const { name, room } = queryString.parse(window.location.search)
 
-    //const socket = openSocket('http://localhost:8000', , {transports: ['websocket']});
     socket = io(ENDPOINT)
 
     setValue({ name, room })
 
     socket.emit('join', { name, room })
+    
+    socket.on('message', ( message ) => {
+      console.log(message)
+      setMessages([...messages, message])
+    })
+
+    socket.on("roomData", ({ users }) => {
+      setUsers(users);
+    });
+
     return () => {
       socket.emit('disconnect')
       socket.off()
     }
-  }, [ENDPOINT, window.location.search])
+  }, [])
 
-  useEffect(() => {
-    socket.on('message', (message) => {
-      setMessages([...messages, message])
-      console.log(value)
-    })
 
-  }, [messages])
+  const sendMessage = (text) => {
+    console.log(text)
 
-  const sendMessage = (e) => {
-    e.preventDefault()
+    if (!message) { return; }
 
-    const { message } = value;
-    if (message) {
-      socket.emit('sendMessage', message)
-      setMessage('')
-    }
+    socket.emit('sendMessage', message)
+    setMessage('')
   }
 
   return <div className='chat-outer-container'>
     <div className='chat-inner-container'>
-      <InfoBar room={value.room} />
-      <Input/>
+      <InfoBar room={value.room} users={users} />
+      <Messages name={value.name} messages={messages} />
+
+      <Input sendMessage={sendMessage} setMessage={setMessage} message={message} />
+
     </div>
     Chat
   </div>

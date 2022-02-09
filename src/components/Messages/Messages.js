@@ -9,7 +9,7 @@ function Messages({ name, messages }) {
     return (
         <ScrollToBottom>
             {messages.map((message, i) => <div key={message.user + i + message.text}>
-                <Message message={message} name={name} />
+                <Message user={message.user} text={message.text} />
             </div>)}
         </ScrollToBottom>
     )
