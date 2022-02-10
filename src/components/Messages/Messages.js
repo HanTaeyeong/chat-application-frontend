@@ -6,10 +6,11 @@ import './Messages.scss'
 import Message from './Message/Message';
 
 function Messages({ name, messages }) {
+
     return (
-        <ScrollToBottom>
+        <ScrollToBottom className={'messages'}>
             {messages.map((message, i) => <div key={message.user + i + message.text}>
-                <Message user={message.user} text={message.text} />
+                <Message name={name} message={message} />
             </div>)}
         </ScrollToBottom>
     )

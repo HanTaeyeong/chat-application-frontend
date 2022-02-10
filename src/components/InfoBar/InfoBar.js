@@ -6,9 +6,7 @@ import closeIcon from '../../icons/closeIcon.png'
 
 
 export default function InfoBar({room,users}) {
-    console.log(users)
-
-
+    
     return <div className='infobar-outer-container'>
         <div className='infobar-left-inner-container'>
             <img className='infobar-online-icon' src={onlineIcon} alt="online-icon" />

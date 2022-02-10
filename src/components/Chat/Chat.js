@@ -14,9 +14,9 @@ const ENDPOINT = 'http://localhost:5000' || process.env.REACT_APP_ENPOINT;
 
 export default function Chat() {
   const [value, setValue] = useState({ name: '', room: '' })
-  const [message, setMessage] = useState('')
+  const [text, setText] = useState('')
   const [messages, setMessages] = useState([])
-  const [users,setUsers]=useState([])
+  const [users, setUsers] = useState([])
 
   useEffect(() => {
     const { name, room } = queryString.parse(window.location.search)
@@ -26,15 +26,14 @@ export default function Chat() {
     setValue({ name, room })
 
     socket.emit('join', { name, room })
-    
-    socket.on('message', ( message ) => {
-      console.log(message)
-      setMessages([...messages, message])
+
+    socket.on('message', (message) => {
+      setMessages(prev => [ ...prev, message ]);
     })
 
     socket.on("roomData", ({ users }) => {
       setUsers(users);
-    });
+    })
 
     return () => {
       socket.emit('disconnect')
@@ -42,23 +41,18 @@ export default function Chat() {
     }
   }, [])
 
+  const sendMessage = () => {
+    if (!text) { return; }
 
-  const sendMessage = (text) => {
-    console.log(text)
-
-    if (!message) { return; }
-
-    socket.emit('sendMessage', message)
-    setMessage('')
+    socket.emit('sendMessage', text)
+    setText('')
   }
 
   return <div className='chat-outer-container'>
     <div className='chat-inner-container'>
       <InfoBar room={value.room} users={users} />
       <Messages name={value.name} messages={messages} />
-
-      <Input sendMessage={sendMessage} setMessage={setMessage} message={message} />
-
+      <Input sendMessage={sendMessage} setText={setText} text={text} />
     </div>
     Chat
   </div>
