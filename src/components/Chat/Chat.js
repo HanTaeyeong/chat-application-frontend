@@ -36,7 +36,7 @@ export default function Chat() {
     })
 
     return () => {
-      socket.emit('disconnect')
+      socket.emit('disconnect',)
       socket.off()
     }
   }, [])
