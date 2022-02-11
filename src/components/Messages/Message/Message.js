@@ -6,11 +6,13 @@ function Message({ name, message }) {
     const isSentByCurrentUser = (user === name);
 
     return (
-        <div className={`message-container 'justify-${isSentByCurrentUser ? 'end' : 'start'}`}>
+        <div className={`message-container flex-${isSentByCurrentUser ? 'end' : 'start'}`}>
+            <div>
+                {!isSentByCurrentUser && <p className={`sentText`}>{user}</p>}
+            </div>
             <div className={`message-box background-${isSentByCurrentUser ? 'blue' : 'light'}`}>
                 <p className={`message-text color-${isSentByCurrentUser ? 'white' : 'dark'}`}>{text}</p>
             </div>
-            <p className={`sentText ${isSentByCurrentUser ? 'pr-10' : 'pl-10'}`}>{user}</p>
         </div>);
 }
 

@@ -28,7 +28,7 @@ export default function Chat() {
     socket.emit('join', { name, room })
 
     socket.on('message', (message) => {
-      setMessages(prev => [ ...prev, message ]);
+      setMessages(prev => [...prev, message]);
     })
 
     socket.on("roomData", ({ users }) => {
@@ -54,6 +54,5 @@ export default function Chat() {
       <Messages name={value.name} messages={messages} />
       <Input sendMessage={sendMessage} setText={setText} text={text} />
     </div>
-    Chat
   </div>
 }
