@@ -6,11 +6,10 @@ import { Route, Routes } from 'react-router-dom'
 import { BrowserRouter } from 'react-router-dom';
 import { createMemoryHistory } from 'history';
 
-const history = createMemoryHistory();
-
-
 import Join from './components/Join/Join'
 import Chat from './components/Chat/Chat'
+
+const history = createMemoryHistory();
 
 function App() {
   return (

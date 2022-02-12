@@ -44,5 +44,8 @@
       "last 1 safari version"
     ]
   },
-  "proxy": "http://ec2-54-174-178-221.compute-1.amazonaws.com"
+  "proxy": "http://ec2-54-174-178-221.compute-1.amazonaws.com",
+  "devDependencies": {
+    "cypress": "^9.4.1"
+  }
 }

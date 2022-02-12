@@ -22,9 +22,9 @@ export default function Join() {
     <div className='join-inner-container'>
       <h1 id='join-heading'>Join</h1>
 
-      <input className='join-input' placeholder='Name' name='name'
+      <input id='#join-input-name' className='join-input' placeholder='Name' name='name'
         onChange={onChange} onKeyPress={e => e.key === "Enter" && onClick(e)} />
-      <input className='join-input' placeholder='Room' name="room"
+      <input id='#join-input-room' className='join-input' placeholder='Room' name="room"
         onChange={onChange} onKeyPress={e => e.key === "Enter" && onClick(e)} />
 
       <div onClick={onClick}  >
