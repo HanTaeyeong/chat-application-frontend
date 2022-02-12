@@ -1,0 +1,40 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Join Component Test render test 1`] = `
+<div
+  id="join-outer-container"
+>
+  <div
+    className="join-inner-container"
+  >
+    <h1
+      id="join-heading"
+    >
+      Join
+    </h1>
+    <input
+      className="join-input"
+      name="name"
+      onChange={[Function]}
+      onKeyPress={[Function]}
+      placeholder="Name"
+    />
+    <input
+      className="join-input"
+      name="room"
+      onChange={[Function]}
+      onKeyPress={[Function]}
+      placeholder="Room"
+    />
+    <div
+      onClick={[Function]}
+    >
+      <button
+        className="join-sign-in-button"
+      >
+        Sign In
+      </button>
+    </div>
+  </div>
+</div>
+`;

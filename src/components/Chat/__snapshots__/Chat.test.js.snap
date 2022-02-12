@@ -1,0 +1,69 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Chat Component Test render test 1`] = `
+<div
+  className="chat-outer-container"
+>
+  <div
+    className="chat-inner-container"
+  >
+    <div
+      className="infobar-outer-container"
+    >
+      <div
+        className="infobar-left-inner-container"
+      >
+        <img
+          alt="online-icon"
+          className="infobar-online-icon"
+          src="onlineIcon.png"
+        />
+        <h3>
+           
+           
+        </h3>
+      </div>
+      <h5>
+        0
+      </h5>
+      <div
+        className="infobar-right-inner-container"
+      >
+        <a
+          href="/"
+        >
+          <img
+            alt="close-icon"
+            src="closeIcon.png"
+          />
+        </a>
+      </div>
+    </div>
+    <div
+      className="react-scroll-to-bottom--css-pyfvl-79elbk messages"
+    >
+      <div
+        className="react-scroll-to-bottom--css-pyfvl-1n7m0yu"
+      />
+    </div>
+    <form
+      className="form"
+    >
+      <input
+        className="input"
+        onChange={[Function]}
+        onKeyPress={[Function]}
+        placeholder="Type a message"
+        type="text"
+        value=""
+      />
+      <button
+        className="send-button"
+        onClick={[Function]}
+      >
+        Send
+      </button>
+    </form>
+  </div>
+</div>
+`;

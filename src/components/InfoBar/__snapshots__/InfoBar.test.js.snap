@@ -1,0 +1,34 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`InfoBar Component Test render test 1`] = `
+<div
+  className="infobar-outer-container"
+>
+  <div
+    className="infobar-left-inner-container"
+  >
+    <img
+      alt="online-icon"
+      className="infobar-online-icon"
+      src="onlineIcon.png"
+    />
+    <h3>
+      undefined 
+       
+    </h3>
+  </div>
+  <h5 />
+  <div
+    className="infobar-right-inner-container"
+  >
+    <a
+      href="/"
+    >
+      <img
+        alt="close-icon"
+        src="closeIcon.png"
+      />
+    </a>
+  </div>
+</div>
+`;

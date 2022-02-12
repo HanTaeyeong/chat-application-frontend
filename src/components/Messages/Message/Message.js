@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import './Message.scss'
 
 function Message({ name, message }) {
-    const { user, text } = message;
+    const { user, text } = message || {};
     const isSentByCurrentUser = (user === name);
 
     return (

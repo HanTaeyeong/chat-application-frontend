@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom'
 import { useNavigate } from 'react-router-dom';
 
 import './Join.scss'
@@ -10,7 +9,6 @@ export default function Join() {
   const navigate = useNavigate();
 
   const onChange = (e) => setInputValue({ ...inputValue, [e.target.name]: e.target.value })
-
 
   const onClick = (e) => {
     if (!name || !room) { return }
@@ -32,6 +30,7 @@ export default function Join() {
       <div onClick={onClick}  >
         <button className='join-sign-in-button' >Sign In</button>
       </div>
+
     </div>
   </div>;
 }

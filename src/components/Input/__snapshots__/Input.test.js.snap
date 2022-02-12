@@ -1,0 +1,21 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Input Component Test render test 1`] = `
+<form
+  className="form"
+>
+  <input
+    className="input"
+    onChange={[Function]}
+    onKeyPress={[Function]}
+    placeholder="Type a message"
+    type="text"
+  />
+  <button
+    className="send-button"
+    onClick={[Function]}
+  >
+    Send
+  </button>
+</form>
+`;
