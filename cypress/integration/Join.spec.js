@@ -2,9 +2,9 @@
 
 const hostURL = 'http://localhost:3000/'
 
-describe('Join Page test', () => {
-    beforeEach(async () => {
-        await cy.visit(hostURL)
+context('Join Page test', () => {
+    beforeEach(() => {
+        cy.visit(hostURL)
     })
 
     it('Header', () => {
@@ -22,9 +22,9 @@ describe('Join Page test', () => {
     })
 
     it('type input Name And Room', () => {
-        cy.get('.join-inner-container').find('#join-input-name').type('hty')
-        //const roomInput= cy.get('#join-input-room').type('1234')
-
+        cy.get('.join-input').first().type('hty', { delay: 50 })
+        cy.get('.join-input').last().type('1234', { delay: 50 })
+        cy.get('.join-sign-in-button').click();
+        cy.url().should('eq','http://localhost:3000/chat?name=hty&room=1234')
     })
-
 })
