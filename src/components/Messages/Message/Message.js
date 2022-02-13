@@ -3,15 +3,15 @@ import './Message.scss'
 
 function Message({ name, message }) {
     const { user, text } = message || {};
-    const isSentByCurrentUser = (user === name);
+    const isSentByname = (user === name);
 
     return (
-        <div className={`message-container flex-${isSentByCurrentUser ? 'end' : 'start'}`}>
+        <div className={`message-container flex-${isSentByname ? 'end' : 'start'}`}>
             <div>
-                {!isSentByCurrentUser && <p className={`sentText`}>{user}</p>}
+                {!isSentByname && <p className={`sentText`}>{user}</p>}
             </div>
-            <div className={`message-box background-${isSentByCurrentUser ? 'blue' : 'light'}`}>
-                <p className={`message-text color-${isSentByCurrentUser ? 'white' : 'dark'}`}>{text}</p>
+            <div className={`message-box background-${isSentByname ? 'blue' : 'light'}`}>
+                <p className={`message-text color-${isSentByname ? 'white' : 'dark'}`}>{text}</p>
             </div>
         </div>);
 }

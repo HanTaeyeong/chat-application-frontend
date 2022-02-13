@@ -22,8 +22,8 @@ context('Join Page test', () => {
     })
 
     it('type input Name And Room', () => {
-        cy.get('.join-input').first().type('hty', { delay: 50 })
-        cy.get('.join-input').last().type('1234', { delay: 50 })
+        cy.get('.join-input').first().type('hty', { delay: 10 })
+        cy.get('.join-input').last().type('1234', { delay: 10 })
         cy.get('.join-sign-in-button').click();
         cy.url().should('eq','http://localhost:3000/chat?name=hty&room=1234')
     })

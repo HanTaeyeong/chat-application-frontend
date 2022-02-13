@@ -20,7 +20,7 @@ export default function Chat() {
 
   useEffect(() => {
     const { name, room } = queryString.parse(window.location.search)
-
+    
     socket = io(ENDPOINT)
 
     setValue({ name, room })

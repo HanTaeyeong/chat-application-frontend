@@ -9,7 +9,7 @@ export default function Input({ text, setText, sendMessage }) {
     }
     return <form className='form'>
         <input
-            className='input'
+            id='message-input'
             type='text'
             placeholder='Type a message'
             value={text}
