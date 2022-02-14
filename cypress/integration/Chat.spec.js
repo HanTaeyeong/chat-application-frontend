@@ -1,13 +1,14 @@
 /// <reference types="cypress" />
 
-const hostURL = REACT_APP_TEST_DATA_HOST_URL || 'http://localhost:3000/'
+const hostURL = Cypress.env('HOST_URL') || 'http://localhost:3000/'
 
-// open backend server on port 5000 before running this test.
+// open backend server before running this test.
 
-const userName = REACT_APP_TEST_DATA_NAME || 'hty'
-const room = REACT_APP_TEST_DATA_ROOM || '1234'
+const userName = 'tyty'
+const room = "WIEJFDLFKE"
 
 const navigateToChatPage = () => {
+   
     cy.visit(hostURL)
     cy.get('.join-input').first().type(userName, { delay: 10 })
     cy.get('.join-input').last().type(room, { delay: 10 })
@@ -17,7 +18,9 @@ const navigateToChatPage = () => {
 
 context('Join Page test', () => {
     beforeEach(() => {
+       
         navigateToChatPage()
+
     })
 
     it('page url test', () => {

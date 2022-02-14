@@ -1,9 +1,10 @@
 /// <reference types="cypress" />
 
-const hostURL = REACT_APP_TEST_DATA_HOST_URL || 'http://localhost:3000/'
 
-const userName = REACT_APP_TEST_DATA_NAME || 'hty'
-const room = REACT_APP_TEST_DATA_ROOM || '1234'
+const hostURL = Cypress.env('HOST_URL') || 'http://localhost:3000/'
+
+const userName = 'tyty'
+const room = "WIEJFDLFKE"
 
 context('Join Page test', () => {
     beforeEach(() => {
