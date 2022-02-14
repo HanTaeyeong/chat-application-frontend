@@ -1,0 +1,163 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 4,
+    "passes": 4,
+    "pending": 0,
+    "failures": 0,
+    "start": "2022-02-14T03:44:48.760Z",
+    "end": "2022-02-14T03:44:50.654Z",
+    "duration": 1894,
+    "testsRegistered": 4,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "02ac0497-0fb4-4f85-ae39-d3fb4ca15e13",
+      "title": "",
+      "fullFile": "cypress/integration/Join.spec(deactivated).js",
+      "file": "cypress/integration/Join.spec(deactivated).js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "f529b5aa-e0e2-4f42-afad-86ddec0f53d7",
+          "title": "Join Page test",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Header",
+              "fullTitle": "Join Page test Header",
+              "timedOut": null,
+              "duration": 321,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('#join-heading').contains('Join');",
+              "err": {},
+              "uuid": "aa3309be-10e9-4044-b6bf-1350d0527785",
+              "parentUUID": "f529b5aa-e0e2-4f42-afad-86ddec0f53d7",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Inputs value is empty for initialState",
+              "fullTitle": "Join Page test Inputs value is empty for initialState",
+              "timedOut": null,
+              "duration": 82,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('.join-input').should('have.text', '');",
+              "err": {},
+              "uuid": "99380316-d870-44a2-8683-cb7c2da5185e",
+              "parentUUID": "f529b5aa-e0e2-4f42-afad-86ddec0f53d7",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Sign In with empty value does not work",
+              "fullTitle": "Join Page test Sign In with empty value does not work",
+              "timedOut": null,
+              "duration": 144,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "const button = cy.get('.join-sign-in-button');\nbutton.click();\ncy.url().should('eq', hostURL);",
+              "err": {},
+              "uuid": "fb7e765d-d270-4f6f-b623-dc39723557c9",
+              "parentUUID": "f529b5aa-e0e2-4f42-afad-86ddec0f53d7",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "type input Name And Room",
+              "fullTitle": "Join Page test type input Name And Room",
+              "timedOut": null,
+              "duration": 609,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('.join-input').first().type(userName, {\n  delay: 10\n});\ncy.get('.join-input').last().type(room, {\n  delay: 10\n});\ncy.get('.join-sign-in-button').click();\ncy.url().should('eq', `${hostURL}chat?name=${userName}&room=${room}`);",
+              "err": {},
+              "uuid": "9c9ba735-74a8-4732-a33b-784435447008",
+              "parentUUID": "f529b5aa-e0e2-4f42-afad-86ddec0f53d7",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "aa3309be-10e9-4044-b6bf-1350d0527785",
+            "99380316-d870-44a2-8683-cb7c2da5185e",
+            "fb7e765d-d270-4f6f-b623-dc39723557c9",
+            "9c9ba735-74a8-4732-a33b-784435447008"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 1156,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.0.1"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/report/mochawesome-report",
+        "overwrite": false,
+        "html": false,
+        "json": true,
+        "timestamp": "mmddyyyy_HHMMss"
+      },
+      "version": "6.0.1"
+    }
+  }
+}

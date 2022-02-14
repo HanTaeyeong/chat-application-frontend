@@ -1,0 +1,182 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 5,
+    "passes": 5,
+    "pending": 0,
+    "failures": 0,
+    "start": "2022-02-14T03:44:39.452Z",
+    "end": "2022-02-14T03:44:45.417Z",
+    "duration": 5965,
+    "testsRegistered": 5,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "e0e41a0c-153f-47bf-b20d-224075230f43",
+      "title": "",
+      "fullFile": "cypress/integration/Chat.spec(deactivated).js",
+      "file": "cypress/integration/Chat.spec(deactivated).js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "d3b38f18-5ab6-429d-ae84-cc025a714e16",
+          "title": "Join Page test",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "page url test",
+              "fullTitle": "Join Page test page url test",
+              "timedOut": null,
+              "duration": 919,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.url().should('eq', `${hostURL}chat?name=${userName}&room=${room}`);",
+              "err": {},
+              "uuid": "831be8db-ee8d-4cba-ae63-c70a94fcc978",
+              "parentUUID": "d3b38f18-5ab6-429d-ae84-cc025a714e16",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "page render test",
+              "fullTitle": "Join Page test page render test",
+              "timedOut": null,
+              "duration": 606,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('.infobar-left-inner-container > h3').should('have.text', room);",
+              "err": {},
+              "uuid": "2f8195a8-84f0-453b-9c38-3af1dd5483dc",
+              "parentUUID": "d3b38f18-5ab6-429d-ae84-cc025a714e16",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "welcome message render correctly",
+              "fullTitle": "Join Page test welcome message render correctly",
+              "timedOut": null,
+              "duration": 1574,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "const welcomeMessage = cy.get('.message-container').first();\nwelcomeMessage.should('have.class', 'flex-start');\nwelcomeMessage.find('div > p').first().should('have.text', 'admin');\nconst welcomeText = cy.get('.message-container').first().find('div').last();\nwelcomeText.should('have.class', 'background-light');\nwelcomeText.find('p').should('have.text', `${userName} welcome to the ${room}`);",
+              "err": {},
+              "uuid": "d241a1a3-4d2e-4f0a-9b36-6b47428600e3",
+              "parentUUID": "d3b38f18-5ab6-429d-ae84-cc025a714e16",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "typying new message render correctly",
+              "fullTitle": "Join Page test typying new message render correctly",
+              "timedOut": null,
+              "duration": 1396,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('#message-input').type('some sample message', {\n  delay: 10\n});\ncy.get('.send-button').click();\ncy.contains('some sample message').should('have.text', 'some sample message');\ncy.contains('some sample message').should('have.class', 'color-white');\ncy.contains('some sample message').closest('div').should('have.class', 'background-blue');",
+              "err": {},
+              "uuid": "af08cf2c-c273-4a69-906d-b7e25870113a",
+              "parentUUID": "d3b38f18-5ab6-429d-ae84-cc025a714e16",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "clicking X button should leave the chat room",
+              "fullTitle": "Join Page test clicking X button should leave the chat room",
+              "timedOut": null,
+              "duration": 656,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('[alt=\"close-icon\"]').click();\ncy.url().should('eq', hostURL);",
+              "err": {},
+              "uuid": "0183a7eb-814b-4c24-88e2-abcbf56af407",
+              "parentUUID": "d3b38f18-5ab6-429d-ae84-cc025a714e16",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "831be8db-ee8d-4cba-ae63-c70a94fcc978",
+            "2f8195a8-84f0-453b-9c38-3af1dd5483dc",
+            "d241a1a3-4d2e-4f0a-9b36-6b47428600e3",
+            "af08cf2c-c273-4a69-906d-b7e25870113a",
+            "0183a7eb-814b-4c24-88e2-abcbf56af407"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 5151,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.0.1"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/report/mochawesome-report",
+        "overwrite": false,
+        "html": false,
+        "json": true,
+        "timestamp": "mmddyyyy_HHMMss"
+      },
+      "version": "6.0.1"
+    }
+  }
+}
