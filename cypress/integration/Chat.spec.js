@@ -1,6 +1,6 @@
 /// <reference types="cypress" />
 
-const hostURL = Cypress.env('HOST_URL') || 'http://localhost:3000/'
+const hostURL = 'http://localhost:3000/'
 
 // open backend server before running this test.
 
