@@ -12,10 +12,7 @@ exports[`InfoBar Component Test render test 1`] = `
       className="infobar-online-icon"
       src="onlineIcon.png"
     />
-    <h3>
-      undefined 
-       
-    </h3>
+    <h3 />
   </div>
   <h5 />
   <div

@@ -10,7 +10,7 @@ import Messages from '../Messages/Messages'
 
 let socket;
 
-const ENDPOINT = 'http://localhost:5000' || process.env.REACT_APP_ENPOINT;
+const ENDPOINT =  process.env.REACT_APP_ENPOINT ||'http://localhost:5000/' ;
 
 export default function Chat() {
   const [value, setValue] = useState({ name: '', room: '' })

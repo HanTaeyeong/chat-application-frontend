@@ -5,7 +5,7 @@ exports[`Input Component Test render test 1`] = `
   className="form"
 >
   <input
-    className="input"
+    id="message-input"
     onChange={[Function]}
     onKeyPress={[Function]}
     placeholder="Type a message"

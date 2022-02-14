@@ -1,6 +1,9 @@
 /// <reference types="cypress" />
 
-const hostURL = 'http://localhost:3000/'
+const hostURL = REACT_APP_TEST_DATA_HOST_URL || 'http://localhost:3000/'
+
+const userName = REACT_APP_TEST_DATA_NAME || 'hty'
+const room = REACT_APP_TEST_DATA_ROOM || '1234'
 
 context('Join Page test', () => {
     beforeEach(() => {
@@ -25,6 +28,6 @@ context('Join Page test', () => {
         cy.get('.join-input').first().type('hty', { delay: 10 })
         cy.get('.join-input').last().type('1234', { delay: 10 })
         cy.get('.join-sign-in-button').click();
-        cy.url().should('eq','http://localhost:3000/chat?name=hty&room=1234')
+        cy.url().should('eq',`${hostURL}chat?name=${userName}&room=${room}`)
     })
 })
